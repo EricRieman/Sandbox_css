@@ -1,0 +1,18 @@
+/*A Pseudo selector is used to define a special state of a selector
+it is applied with a : and then the special state, as show below*/
+h2:hover {
+    color: red;
+}
+/*All h2 will now turn red when you hover over them*/
+
+/*first child and last child*/
+
+.subtitle {
+    color: blue;
+}
+
+#services{
+    color:green;
+}
+
+/*41:0*/

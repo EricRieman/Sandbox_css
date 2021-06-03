@@ -3,13 +3,12 @@ import "./style.css"
 function App() {
   return (
     <div>
-        {/*below is an example of inline styling, the most specific  */}
-        <h1 id="title" stlye= "color: steelblue;">My Website</h1>
+        <h1 id="title">My Website</h1>
 
         <p class="para-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.</p>
 
-        <h2 class="subtitle" >About Me</h2>
+        <h2 class="subtitle" id="about-me">About Me</h2>
 
         <img src="../img/img-1.jpg" id="about-us-image"/>
 
@@ -32,7 +31,7 @@ function App() {
           </ul>
         </p>
 
-        <h2 class="subtitle" id="services">Services</h2>
+        <h2 class="subtitle">Services</h2>
 
         <a href="http://www.google.com" class="link">Click here to go to Google</a>
 

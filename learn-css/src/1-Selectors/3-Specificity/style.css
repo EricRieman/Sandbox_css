@@ -1,0 +1,27 @@
+/*
+    Determining when to use classes, ids or elements comes down to 
+    specificity: https://www.w3schools.com/css/css_specificity.asp
+
+    if there are two conflicting property assignments, the browser
+    follows some rules to determine which one is most specific.
+*/
+
+/*all h2 are now red*/
+h2 {
+    color: red;
+}
+
+/*the subtitle class is used on an h2. Here we have a conflict,
+but the class wins because it is more specific.*/
+.subtitle {
+    color: blue;
+}
+
+/*the services id is used on an h2 with subtitle class. in this case
+the id is most specific, so the color is green.*/
+#services{
+    color:green;
+}
+
+/*the most specific beyond id is inline styling. This is css
+defined directly in the html.*/
