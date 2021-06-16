@@ -1,39 +1,9 @@
-/*A Pseudo selector is used to define a special state of a selector
-it is applied with a : and then the special state, as show below*/
-h2:hover {
-    color: red;
+/*In html, we can add attributes to all of our elements. In css,
+we can select certian elements with their attributes 
+
+In the example below, we select all h2 with a className attribute
+equal to subtitle*/
+
+h2[className=subtitle] {
+    color: blue;
 }
-/*All h2 will now turn red when you hover over them*/
-
-/*first child and last child is used to grab children html element*/
-
-ul:first-child {
-    color:steelblue;
-}
-
-ul:last-child {
-    color:tomato
-}
-
-/*to style a specific child, index the nth child*/
-li:nth-last-child(3) {
-    color:thistle
-}
-
-/*to style if it only has one child*/
-td:only-child {
-    color: purple
-}
-
-/*There are sudeo selectors for specific tag. In the example below,
-we style and anchor tag by id to style the link's color before and 
-after being clicked*/
-#google-link:link {
-    color:blue
-}
-
-#google-link:visited {
-    color:red
-}
-
-/*48*/
