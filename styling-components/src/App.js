@@ -61,7 +61,7 @@ const VanillaCss = () => {
 }
 
 const CssModule = () => {
-  return <div className='myStyle.myHeader'>
+  return <div className={myStyle.myHeader}>
     <h1>This is styled using css modules</h1>
   </div>
 }

@@ -1,0 +1,17 @@
+.myHeader {
+  font: inherit;
+  cursor: pointer;
+  color: red;
+  background: #c2c2c2;
+  padding: 2rem;
+  margin: 1rem;
+  max-width: 40rem;
+  border: 1px solid blue;
+  border-radius: 25px;
+}
+
+.myHeader:hover, :active {
+  background: lightblue;
+  color: blue;
+  border-color: black;
+}

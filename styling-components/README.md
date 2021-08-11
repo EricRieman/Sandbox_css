@@ -22,9 +22,9 @@ One problem with this is that all your code is still in a javascript file, even 
 A vanilla css file may be imported in a specific component, but the styles defined in it will be injected direcly into the head of our html. This means there is no assignmnet, so a global style defined there will be applied to the entire site, not just that component. This can be dangerous, and why we use classes in css to assign specific styles. Then we must be carful not to use the same classname twice, which can get difficult on large scale projects. A common css class naming practice to avoid this is called [BEM](http://getbem.com/introduction/), blocks, elements, and modifiers.
 
 ## CSS Modules
-This is a built time transformation that is supported by projects created by create-react-app. Using CSS modules will tell the build tool in the web pack (with the right plugins) to go over the css files and tweak the css class names to be garenteed unique, and then inject those names into the jsx code. This way, we can import a componeent specific css file and ensure it is only being used on that one component
+This is a built time transformation that is supported by projects created by create-react-app. Using CSS modules will tell the build tool in the web pack (with the right plugins) to go over the css files and tweak the css class names to be garenteed unique, and then inject those names into the jsx code. This way, we can import a component specific css file and ensure it is only being used on that one component
 
-To do that, we need to import the css file in a different way...
+To do that, we need to change the file name to my-file.module.css, the .module tell the compiler to use css modules. We then need to import the module.css file in a different way...
 
 Vanilla css:
 ````js
@@ -36,4 +36,4 @@ CSS module:
 import myName from './style.module.css'
 ````
 
-Then, in the jsx code, you can access the classes defined in that css file using the dot operator: className='myName.button' instead of className='button'
+Then, in the jsx code, you can access the classes defined in that css file using the dot operator: className={myName.button} instead of className='button'
