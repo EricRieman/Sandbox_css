@@ -1,9 +1,10 @@
-import "./style.css"
+import React from 'react'
+import bootstrap from 'bootstrap'
 
 function App() {
   return (
-    <div>
-      Hello
+    <div className = 'container'>
+      Hello world
     </div>
   );
 }
