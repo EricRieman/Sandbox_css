@@ -1,18 +1,8 @@
-* {
-    background-color: rgb(41, 44, 77);
-    text-align: center;
-}
-
-.container {
-    padding: 2rem
+.main-body {
+  padding-top: 1rem;
+  background:rgb(28, 47, 107);
+  text-align: center;
+  align-items: center;
 
 }
 
-.alert {
-    max-width: 10rem;
-}
-
-.btn {
-    margin: 1rem;
-    padding: 5 rem;
-}
