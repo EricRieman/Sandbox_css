@@ -4,6 +4,10 @@
 ## Table of Contents
 - [Creating and linking a style sheet](#Creating-and-linking-a-style-sheet)
 - [Selectors](#Selectors)
+  - [Element](#Element-selector)
+  - [Class](#Class-selector)
+  - [ID](#ID-selector)
+  - [Inline](#Inline-style)
 - [PseudoSelectors](#PseudoSelectors)
 
 CSS standes for cascading style sheet, and it is used to style html elements on a webpage. Html is the structure of a web page, css is the visuals. Css is responsible for layout/design, animations, font changes, organization and grid systems.
@@ -25,7 +29,7 @@ import style from './style.css'
 ## Selectors
 Selectors are a way of grabbing and maipulating HTML. There are any types of selctors, and they all work in different ways, and are used for different purposes. Each have thier own specificity, which is a ranking order on which property is applied, if two or more of the same styles are applied. 
 
-- Element selector \
+### Element selector
   Can select entire elements without any special charaters and applies to all the elements on the page with that tag. It is at the bottom of the specificity scale.
 
   ````css
@@ -35,7 +39,7 @@ Selectors are a way of grabbing and maipulating HTML. There are any types of sel
   ````
   Will make all paragraphs red.
 
-- Class selector \
+### Class selector
   This is used to select elements with a certain class name. Is used by all elements assigned that class name. This is after the element selector on the specificity scale.
 
   ````html
@@ -48,7 +52,7 @@ Selectors are a way of grabbing and maipulating HTML. There are any types of sel
   }
   ````
 
-- ID selector \
+### ID selector
 This is used to select elements with a certain id name. Can be used on all elements assigned that id. Unlike classes, it is meant to be used on one element at a time, though, it will still work if you do. This is after the class selector on the specificity scale.
 
   ````html
@@ -61,12 +65,14 @@ This is used to select elements with a certain id name. Can be used on all eleme
   }
   ````
 
+### Inline style
 These are the most commonly used selectors, but there are more. We can also use inline styles to style elements. In that case, we define the css code directly in the html, and dont need a css file. These are the highest on the specificity scale
   ````html
   <p style="color: red;">Text</p>
   ````
 
-Specificty scale:   element > class > id > inline
+### Specificty scale:
+element > class > id > inline
 
 ## PseudoSelectors
 A Pseudo selector is used to define a special state of a selector. It is applied with a : and then the special state. In the example below, all h2 elements will change to the color red when hovering over.
