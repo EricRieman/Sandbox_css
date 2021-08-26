@@ -8,7 +8,11 @@
   - [Class](#Class-selector)
   - [ID](#ID-selector)
   - [Inline](#Inline-style)
-- [PseudoSelectors](#PseudoSelectors)
+- [Pseudo Selectors](#Pseudo-selectors)
+  - [Child Selectors](#Child-pseudo-selector)
+  - [Element specific](#Element-specific-pseudo-selector)
+- [Advanced Selectors](#Advanced-selectors)
+  - [General sibling combinator](#General-sibling-combinator)
 
 CSS standes for cascading style sheet, and it is used to style html elements on a webpage. Html is the structure of a web page, css is the visuals. Css is responsible for layout/design, animations, font changes, organization and grid systems.
 
@@ -34,7 +38,7 @@ Selectors are a way of grabbing and maipulating HTML. There are any types of sel
 
   ````css
   p {
-    color: red
+    color: red;
   }
   ````
   Will make all paragraphs red.
@@ -48,7 +52,7 @@ Selectors are a way of grabbing and maipulating HTML. There are any types of sel
 
   ````css
   .my-class {
-    color: red
+    color: red;
   }
   ````
 
@@ -61,7 +65,7 @@ This is used to select elements with a certain id name. Can be used on all eleme
 
   ````css
   #my-id {
-    color: red
+    color: red;
   }
   ````
 
@@ -74,14 +78,14 @@ These are the most commonly used selectors, but there are more. We can also use 
 ### Specificty scale:
 element > class > id > inline
 
-## PseudoSelectors
+## Pseudo selectors
 A Pseudo selector is used to define a special state of a selector. It is applied with a : and then the special state. In the example below, all h2 elements will change to the color red when hovering over.
   ````css
  h2:hover {
-    color: red
+    color: red;
   }
   ````
-
+### Child pseudo selector
   There are many special states to pseudo selectors, another one is first-child and last-child, which can be used to style the first or last child element. In the example below, the first li and the last li will be colored red. There is also nth-child, which requires a paramenter specifing the number of tht child. The third element in the example below will also be red.
   
   ````html
@@ -95,18 +99,19 @@ A Pseudo selector is used to define a special state of a selector. It is applied
 
   ````css
   li:first-child {
-    color: red
+    color: red;
   }
 
   li:last-child {
-    color: red
+    color: red;
   }
 
   li:nth-child(3) {
-    color: red
+    color: red;
   }
   ````
 
+### Element specific pseudo selector
   There is also the only-child selector, which will only style an element if there is only one child inside of it. This would be the case in the example below, so the li would be colored red.
 
   ````html
@@ -117,6 +122,57 @@ A Pseudo selector is used to define a special state of a selector. It is applied
 
   ````css
   li:olny-child {
-    color: red
+    color: red;
   }
   ````
+Many of the pseudo selector are element specific. For example, only the anchor tag has a link pseuodo selector. Below, the google link will appear red, then change to yellow after it has been clicked.
+
+  ````html
+  <a href="http://www.google.com" class="google-link">google</a>
+  ````
+
+  ````css
+  .google-link:link {
+    color: red;
+  }
+
+  .google-link:visited {
+    color: yellow;
+  }
+  ````
+
+  ## Advanced selectors
+
+  ### Adjacent sibling
+  The adjacent sibling selector selects every element that directly follows a different element. This is denoted with a +, in the example below, all achors that are chilren of h2 will be colored red.
+
+  ````html
+  <h2>
+    <a>my-link</a>
+  </h2>
+  ````
+
+  ````css
+  h2 + a {
+    color: red;
+  }
+  ````
+
+### General sibling combinator
+The general sibling combinator (or selector) can be used to grab a sibling element. A sibling means they share the same parent, and is denote with a ~. In the example below, the button will appear red.
+  ````html
+  <main>
+    <textarea>Text</textarea>
+    <button>My button</button>
+  </main>
+  ````
+
+  ````css
+  textarea ~ button {
+    color: red;
+  }
+  ````
+
+  ### Child advanced selector
+
+  54:22
