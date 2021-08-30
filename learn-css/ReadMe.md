@@ -173,6 +173,44 @@ The general sibling combinator (or selector) can be used to grab a sibling eleme
   }
   ````
 
-  ### Child advanced selector
+  ### Child selector
+  Grabs all children of a certain element, denoted with a >. In the example below, all li elements inside a ul will be red;
+    
+  ````html
+  <ul>
+    <li>item 1</li>
+    <li>item 2</li>
+    <li>item 3</li>
+  </ul>
+  ````
 
-  54:22
+  ````css
+  ul > li {
+    color: red;
+  }
+  ````
+
+  Remember, specificity is still in play with these advanced selectors, but they can get very confusing. Generally, a more specific selector is greater on the specificity scale, and sudeo selectors are more specific then advanced selectors. Using selectors in complicated ways are generally not good practice, as spcificity can get complex. The most common selectors are element, class, and id, then using inline when nessesary, and to override any other selector, as inline is the highest on the specificity scale.
+
+  ### Decendent selector
+  Grabs all children, and its children,... of a certain element, denoted with nothing. In the example below, all li elements inside a ul will be red, and becasue it has a ol child with li chilidren, those li will aslo be red.
+
+  ````html
+  <ul>
+    <li>My unordered list</li>
+    <li><ol>
+      <li>
+        My numbered list
+      </li>
+    </li></ol>
+
+  </ul>
+  ````
+
+  ````css
+  ul li {
+    color: red;
+  }
+  ````
+
+  //58:00
