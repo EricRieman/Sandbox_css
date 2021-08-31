@@ -8,11 +8,16 @@
   - [Class](#Class-selector)
   - [ID](#ID-selector)
   - [Inline](#Inline-style)
-- [Pseudo Selectors](#Pseudo-selectors)
-  - [Child Selectors](#Child-pseudo-selector)
-  - [Element specific](#Element-specific-pseudo-selector)
-- [Advanced Selectors](#Advanced-selectors)
-  - [General sibling combinator](#General-sibling-combinator)
+  - [Pseudo Selectors](#Pseudo-selectors)
+    - [Child Selectors](#Child-pseudo-selector)
+    - [Element specific](#Element-specific-pseudo-selector)
+  - [Advanced Selectors](#Advanced-selectors)
+    - [General sibling combinator](#General-sibling-combinator)
+    - [Child selector](#Child-selector)
+    - [Decendent selector](#Decendent-selector)
+  - [Attribute selector](#Attribute-selector)
+    - [Whitespace attribute selector](#Whitespace-attribute-selector)
+- [Properties](#Properties)
 
 CSS standes for cascading style sheet, and it is used to style html elements on a webpage. Html is the structure of a web page, css is the visuals. Css is responsible for layout/design, animations, font changes, organization and grid systems.
 
@@ -190,8 +195,6 @@ The general sibling combinator (or selector) can be used to grab a sibling eleme
   }
   ````
 
-  Remember, specificity is still in play with these advanced selectors, but they can get very confusing. Generally, a more specific selector is greater on the specificity scale, and sudeo selectors are more specific then advanced selectors. Using selectors in complicated ways are generally not good practice, as spcificity can get complex. The most common selectors are element, class, and id, then using inline when nessesary, and to override any other selector, as inline is the highest on the specificity scale.
-
   ### Decendent selector
   Grabs all children, and its children,... of a certain element, denoted with nothing. In the example below, all li elements inside a ul will be red, and becasue it has a ol child with li chilidren, those li will aslo be red.
 
@@ -213,4 +216,54 @@ The general sibling combinator (or selector) can be used to grab a sibling eleme
   }
   ````
 
-  //58:00
+  Remember, specificity is still in play with these advanced selectors, but they can get very confusing. Generally, a more specific selector is greater on the specificity scale, and sudeo selectors are more specific then advanced selectors. Using selectors in complicated ways are generally not good practice, as spcificity can get complex. The most common selectors are element, class, and id, then using inline when nessesary, and to override any other selector, as inline is the highest on the specificity scale.
+
+## Attribute selector
+An attribute in html are the paremeter we pass into the element, for example, <img> has a src attribute: <img src="">. With attribute selectors, we can select elements based on their attributes and values. The code below styles all h2 elements with the class attribute set to subtitle. The two css blocks do exactly the same thing, as the class selector styles the exact same way, however, the attribute selector is only applied to h2 elements where the class selector is applied to all elements with that class.
+  ````html
+  <h2 class='subtitle'>text</h2>
+  ````
+  ````css
+  h2[class=subtitle] {
+    color: red;
+  }
+
+  .subtitle{
+    color: red;
+  }
+  ````
+
+  In the above example, the attribute value (subtitle) must matach exactly to the class name. However, we could also check if it just begins with that value, for example, if we assigned a class subtitle-2 but still want the same styling applied. We use ^= instead of =, shown below. This can we useful for the image src attribute, as local images are generaly stored in the same folder, so the starting path would be '../img/'
+
+  ````html
+  <h2 class='subtitle-2'>text</h2>
+  ````
+  ````css
+  h2[class^=subtitle] {
+    color: red;
+  }
+  ````
+
+  Similarly, we can use $= to check if the attribute ends with the value.
+  ````html
+  <h2 class='subtitle-2'>text</h2>
+  ````
+  ````css
+  h2[class$=-2] {
+    color: red;
+  }
+  ````
+
+  Similarly, we can use *= to check if the attribute is anywhere within the value.
+  ````html
+  <h2 class='subtitle-2'>text</h2>
+  ````
+  ````css
+  h2[class*=title] {
+    color: red;
+  }
+  ````
+
+  There are many more attribute selectors, these are just some that are fairly common. 
+
+  ## Properties
