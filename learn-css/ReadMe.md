@@ -5,7 +5,7 @@
 - [Creating and linking a style sheet](#Creating-and-linking-a-style-sheet)
 - [Basics](#Basics)
 - [Selectors](1-Selectors.md)
-- [Properties](2-Colors.md)
+- [Colors](2-Colors.md)
 - [Unit Types](3-UnitTypes.md)
 
 CSS standes for cascading style sheet, and it is used to style html elements on a webpage. Html is the structure of a web page, css is the visuals. Css is responsible for layout/design, animations, font changes, organization and grid systems.
